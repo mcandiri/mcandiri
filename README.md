@@ -1,35 +1,26 @@
 # Mehmet Can Diri
 
-Lead Software Engineer building education technology that serves 1,500+ students daily.
+Lead Software Engineer at [Veritas Education](https://veritasedu.net). I lead architecture and delivery for an education platform serving 1,500+ students, 350+ teachers, and 40+ staff daily.
 
-10+ years shipping .NET systems — from database architecture to AI integrations. Currently running [Veritas Education](https://veritasedu.net), where I make the technical decisions and write the critical code.
+## What I've Shipped
 
-## What I Work With
+**Education platform (10+ years)** — multi-tenant system handling course management, digital exams, student tracking, and financial operations across 499 database tables, 1,851 stored procedures, and 6.4M rows. Migrated core modules from Windows Forms to .NET 8 + Blazor Server.
 
-**.NET ecosystem** — ASP.NET Core, Blazor Server, Dapper, SQL Server. This is where most of my production experience lives.
+**Exam automation** — reduced manual grading time from ~4 hours to under 10 minutes per exam cycle using OCR-based answer sheet processing with per-question analytics (difficulty index, discrimination index).
 
-**Database engineering** — stored procedures, execution plan optimization, schema design for multi-tenant education platforms.
+**LLM integration** — built a provider abstraction layer after an OpenAI outage during peak exam period took down AI-assisted study features. Now failover between OpenAI, Anthropic, and Gemini happens automatically.
 
-**AI/LLM integration** — building reliable abstractions over OpenAI, Anthropic, and Gemini APIs with failover and retry logic.
+**Database optimization** — identified 183 tables missing primary keys and 363 missing foreign key indexes in a 499-table production database using custom static analysis tooling. Reduced slow query incidents after targeted index additions.
 
-**Python** — database forensics tooling, static analysis, CLI tools.
+## Open Source
 
-## Selected Projects
+| Project | What it does | Lang | Tests |
+|---------|-------------|------|-------|
+| [SQLForensic](https://github.com/mcandiri/sqlforensic) | Database static analysis — [real scan results from 499-table production DB](https://github.com/mcandiri/sqlforensic#real-world-results) | Python | 289 |
+| [LLMForge](https://github.com/mcandiri/LLMForge) | Multi-provider LLM calls with failover and circuit breaker | C# | 99 |
+| [ExamReader](https://github.com/mcandiri/ExamReader) | OCR exam grading + class analytics | C# | 100+ |
+| [DapperForge](https://github.com/mcandiri/DapperForge) | Convention-based SP toolkit — extracted from 200+ SP codebase | C# | ✅ |
+| [LiveSQL](https://github.com/mcandiri/LiveSQL) | SQL execution plan visualizer with animated flow diagrams | C# | ✅ |
+| [FlowForge](https://github.com/mcandiri/FlowForge) | Visual workflow builder with drag-and-drop canvas + C# export | C# | 118 |
 
-**[SQLForensic](https://github.com/mcandiri/sqlforensic)** — Database static analysis tool (Python). Scans SQL Server databases for missing indexes, dead code, circular dependencies, and schema issues. [Tested against a 499-table production database](https://github.com/mcandiri/sqlforensic#real-world-results).
-
-**[LLMForge](https://github.com/mcandiri/LLMForge)** — Multi-provider LLM orchestration for .NET. Single interface across OpenAI, Anthropic, and Gemini with automatic failover and circuit breaker.
-
-**[ExamReader](https://github.com/mcandiri/ExamReader)** — Exam grading engine with OCR, automatic scoring, and class analytics (difficulty index, discrimination index). Started as an Azure CV experiment, grew into a full analysis platform.
-
-**[DapperForge](https://github.com/mcandiri/DapperForge)** — Convention-based stored procedure toolkit for Dapper. Extracted from a codebase with 200+ SPs.
-
-**[LiveSQL](https://github.com/mcandiri/LiveSQL)** — SQL execution plan visualizer with animated flow diagrams and bottleneck detection. Blazor Server UI.
-
-**[FlowForge](https://github.com/mcandiri/FlowForge)** — Visual workflow builder with drag-and-drop canvas, real-time execution trace, and C# code export. Blazor Server UI.
-
-## Context
-
-Most of these projects started as internal tools for [Veritas Education](https://veritasedu.net) — solving real problems like grading exams faster, debugging slow queries, or avoiding vendor lock-in on LLM providers. I extracted and open-sourced them because the patterns are useful beyond education.
-
-I'm not trying to build the next framework ecosystem. These are focused tools that solve specific problems I've actually had.
+All projects have CI, releases, and run without external dependencies in demo mode.
