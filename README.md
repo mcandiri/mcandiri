@@ -4,19 +4,19 @@ Lead Software Engineer at [Veritas Education](https://veritasedu.net). I lead ar
 
 ## What I've Shipped
 
-**Education platform (10+ years)** — multi-tenant system handling course management, digital exams, student tracking, and financial operations across 499 database tables, 1,851 stored procedures, and 6.4M rows. Migrated core modules from Windows Forms to .NET 8 + Blazor Server.
+**Education platform** — built and maintain the full-stack system behind Veritas Education: course registration, student tracking, financial operations, and parent communication. Currently migrating from Windows Forms to .NET 8 + Blazor Server for remote access and mobile support.
 
-**Exam automation** — reduced manual grading time from ~4 hours to under 10 minutes per exam cycle using OCR-based answer sheet processing with per-question analytics (difficulty index, discrimination index).
+**Digital exam system** — replaced paper-based exams with an online testing environment supporting timed sessions, randomized questions, and automated grading. Cut exam processing time from days to minutes.
 
-**LLM integration** — built a provider abstraction layer after an OpenAI outage during peak exam period took down AI-assisted study features. Now failover between OpenAI, Anthropic, and Gemini happens automatically.
+**AI-powered study tools** — integrated LLM APIs to generate personalized study programs with spaced repetition. Built provider failover after an OpenAI outage disrupted service during peak exam period.
 
-**Database optimization** — identified 183 tables missing primary keys and 363 missing foreign key indexes in a 499-table production database using custom static analysis tooling. Reduced slow query incidents after targeted index additions.
+**Database health initiative** — wrote static analysis tooling to audit the production database. First scan surfaced hundreds of missing indexes and unused stored procedures that had accumulated over years of organic growth.
 
 ## Open Source
 
 | Project | What it does | Lang | Tests |
 |---------|-------------|------|-------|
-| [SQLForensic](https://github.com/mcandiri/sqlforensic) | Database static analysis — [real scan results from 499-table production DB](https://github.com/mcandiri/sqlforensic#real-world-results) | Python | 289 |
+| [SQLForensic](https://github.com/mcandiri/sqlforensic) | Database static analysis — [tested on production DB](https://github.com/mcandiri/sqlforensic#real-world-results) | Python | 289 |
 | [LLMForge](https://github.com/mcandiri/LLMForge) | Multi-provider LLM calls with failover and circuit breaker | C# | 99 |
 | [ExamReader](https://github.com/mcandiri/ExamReader) | OCR exam grading + class analytics | C# | 100+ |
 | [DapperForge](https://github.com/mcandiri/DapperForge) | Convention-based SP toolkit — extracted from 200+ SP codebase | C# | ✅ |
