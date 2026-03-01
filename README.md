@@ -4,23 +4,25 @@ Lead Software Engineer at [Veritas Education](https://veritasedu.net). I lead ar
 
 ## What I've Shipped
 
-**Education platform** — built and maintain the full-stack system behind Veritas Education: course registration, student tracking, financial operations, and parent communication. Currently migrating from Windows Forms to .NET 8 + Blazor Server for remote access and mobile support.
+**Education platform** — built and maintain the system behind Veritas Education: course registration, student tracking, financial operations, and parent communication. Currently migrating from Windows Forms to .NET 8 + Blazor Server for remote access and mobile support.
 
-**Digital exam system** — replaced paper-based exams with an online testing environment supporting timed sessions, randomized questions, and automated grading. Cut exam processing time from days to minutes.
+**Digital exam system** — replaced paper-based exams with an online testing environment supporting timed sessions, randomized questions, and automated grading. What used to take staff 2–3 days of manual work now completes in under 15 minutes.
 
-**AI-powered study tools** — integrated LLM APIs to generate personalized study programs with spaced repetition. Built provider failover after an OpenAI outage disrupted service during peak exam period.
+**LLM provider failover** — an OpenAI outage during peak exam period took down AI-assisted study features for ~2 hours. Built a multi-provider abstraction with automatic failover (OpenAI → Anthropic → Gemini), circuit breaker for transient failures, and rate-limit aware retry. No single provider outage has caused downtime since.
 
-**Database health initiative** — wrote static analysis tooling to audit the production database. First scan surfaced hundreds of missing indexes and unused stored procedures that had accumulated over years of organic growth.
+**Database health audit** — wrote static analysis tooling to audit the production database. First scan of 499 tables and 1,851 stored procedures surfaced 183 tables without primary keys, 363 missing foreign key indexes, and 1,726 stored procedures with no internal references. Targeted index additions based on the report.
+
 
 ## Open Source
 
-| Project | What it does | Lang | Tests |
-|---------|-------------|------|-------|
-| [SQLForensic](https://github.com/mcandiri/sqlforensic) | Database static analysis — [tested on production DB](https://github.com/mcandiri/sqlforensic#real-world-results) | Python | 289 |
-| [LLMForge](https://github.com/mcandiri/LLMForge) | Multi-provider LLM calls with failover and circuit breaker | C# | 99 |
-| [ExamReader](https://github.com/mcandiri/ExamReader) | OCR exam grading + class analytics | C# | 100+ |
-| [DapperForge](https://github.com/mcandiri/DapperForge) | Convention-based SP toolkit — extracted from 200+ SP codebase | C# | ✅ |
-| [LiveSQL](https://github.com/mcandiri/LiveSQL) | SQL execution plan visualizer with animated flow diagrams | C# | ✅ |
-| [FlowForge](https://github.com/mcandiri/FlowForge) | Visual workflow builder with drag-and-drop canvas + C# export | C# | 118 |
+| Project | What it does | Lang |
+|---------|-------------|------|
+| [SQLForensic](https://github.com/mcandiri/sqlforensic) | Database static analysis — [real scan results](https://github.com/mcandiri/sqlforensic#real-world-results) | Python |
+| [LLMForge](https://github.com/mcandiri/LLMForge) | Multi-provider LLM calls with failover and circuit breaker | C# |
+| [ExamReader](https://github.com/mcandiri/ExamReader) | OCR exam grading + class analytics | C# |
+| [DapperForge](https://github.com/mcandiri/DapperForge) | Convention-based SP toolkit — extracted from 200+ SP codebase | C# |
+| [LiveSQL](https://github.com/mcandiri/LiveSQL) | SQL execution plan visualizer with animated flow diagrams | C# |
+| [FlowForge](https://github.com/mcandiri/FlowForge) | Visual workflow builder with drag-and-drop canvas + C# export | C# |
 
-All projects have CI, releases, and run without external dependencies in demo mode.
+
+Each project has CI and can run in demo mode without external dependencies.
