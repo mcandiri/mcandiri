@@ -4,7 +4,7 @@ Lead Software Engineer at [Veritas Education](https://veritasedu.net). I lead ar
 
 ## What I've Shipped
 
-**Veritas2** — core education platform handling course registration, student tracking, attendance, grading, financial operations, and parent communication. Originally built in Windows Forms, currently migrating to .NET 8 + Blazor Server for remote access and multi-device support. SQL Server backend with 500+ tables and 2,000+ stored procedures.
+**Veritas** — core education platform handling course registration, student tracking, attendance, grading, financial operations, and parent communication. Originally built in Windows Forms, currently migrating to .NET 8 + Blazor Server for remote access and multi-device support. SQL Server backend with 500+ tables and 2,000+ stored procedures.
 
 **EduConsult** — multi-tenant SaaS platform for education consultancy firms. 38 modules including student CRM, application tracking, visa management, document generation, and financial reporting. Smart university matching recommends the best-fit schools based on student profile, academic history, budget, and preferences. Built for Turkish and international markets with 
 full bilingual support (TR/EN).
